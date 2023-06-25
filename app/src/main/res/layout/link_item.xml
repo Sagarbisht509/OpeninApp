@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="116dp"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/profile" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:maxLines="1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/clicks"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:textSize="12sp"
+                android:text="@string/clicks" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/light_blue"
+        android:background="@drawable/coupon">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/smartLink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:textColor="#0E6FFF"/>
+
+            <ImageView
+                android:id="@+id/copySmartLink"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/copy"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

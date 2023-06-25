@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_bg"
+    tools:context=".ui.LinkFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="492dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="163dp"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                    android:id="@+id/greeting"
+                    android:layout_width="105dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:lineHeight="24dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/name_tv"
+                    android:layout_width="127dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentBottom="true"
+                    android:lineHeight="32dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="408dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                </com.github.mikephil.charting.charts.BarChart>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/itemRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/button_bg">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/trend" />
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="24dp"
+                            android:lineHeight="24dp"
+                            android:text="@string/view_analytics"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                app:tabIndicator="@drawable/tab_indicator"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabSelectedTextColor="@color/black"
+                app:tabIndicatorColor="@null"
+                app:tabIndicatorGravity="stretch"
+                app:tabMode="fixed" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_bg">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/link" />
+
+                    <TextView
+                        android:layout_width="109dp"
+                        android:layout_height="24dp"
+                        android:lineHeight="24dp"
+                        android:text="@string/view_all_links"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="90dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/twa_bg"
+                    android:layout_alignParentTop="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/whatsapp"/>
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:textSize="16sp"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/talk_with_us"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/faq_bg"
+                    android:layout_alignParentBottom="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/faq"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:textSize="16sp"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/frequently_asked_questions"/>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>
