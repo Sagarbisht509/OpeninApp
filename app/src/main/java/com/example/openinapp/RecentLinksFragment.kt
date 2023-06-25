@@ -42,11 +42,6 @@ class RecentLinksFragment : Fragment() {
     private fun observer() {
         mainViewModel.liveData.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is NetworkResult.Loading -> {
-                    // show progress bar
-
-                    Log.d("find-Me", "loading");
-                }
                 is NetworkResult.Success -> {
                     if(it.data != null) {
                         binding.recentLinkRecyclerView.adapter = LinkAdapter(it.data.data.top_links, it.data.data.recent_links, "recent")
@@ -56,6 +51,8 @@ class RecentLinksFragment : Fragment() {
                     Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
                         .show()
                 }
+
+                else -> {}
             }
         })
     }

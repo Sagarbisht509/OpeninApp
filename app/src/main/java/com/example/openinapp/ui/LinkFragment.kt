@@ -35,7 +35,7 @@ class LinkFragment : Fragment() {
 
     private val mainViewModel by viewModels<MainViewModel>()
 
-    lateinit var array: List<Item>
+    lateinit var itemList: List<Item>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -96,9 +96,6 @@ class LinkFragment : Fragment() {
 
         val barDataSet = BarDataSet(list, "")
 
-        //  barDataSet.setColors(ColorTemplate.MATERIAL_COLORS,255)
-        // barDataSet.valueTextColor=Color.BLACK
-
         val barData = BarData(barDataSet)
 
         binding.apply {
@@ -119,7 +116,7 @@ class LinkFragment : Fragment() {
     }
 
     private fun storeData(body: ApiResponse) {
-        array = listOf(
+        itemList = listOf(
             Item(R.drawable.click, "Total clicks", body.total_clicks.toString()),
             Item(R.drawable.click, "Today's clicks", body.today_clicks.toString()),
             Item(R.drawable.link, "Total links", body.total_links.toString()),
@@ -168,16 +165,11 @@ class LinkFragment : Fragment() {
     private fun observer() {
         mainViewModel.liveData.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is NetworkResult.Loading -> {
-                    // show progress bar
-                    Log.d("find-Me", "loading");
-                }
-
                 is NetworkResult.Success -> {
                     if (it.data != null) {
                         setupLineChart(it.data.data.overall_url_chart)
                         storeData(it.data)
-                        binding.itemRecyclerView.adapter = ItemAdapter(array)
+                        binding.itemRecyclerView.adapter = ItemAdapter(itemList)
                     }
                 }
 
@@ -185,6 +177,8 @@ class LinkFragment : Fragment() {
                     Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
                         .show()
                 }
+
+                else -> {}
             }
         })
     }

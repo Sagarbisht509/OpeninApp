@@ -18,7 +18,7 @@ class LinkAdapter(
     class LinkViewHolder(private val binding: LinkItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindTop(link: TopLink) {
-            Glide.with(binding.root.context).load(link.url_id).into(binding.image)
+            Glide.with(binding.root.context).load(link.original_image).into(binding.image)
 
             binding.apply {
                 title.text = link.title
@@ -30,7 +30,7 @@ class LinkAdapter(
         }
 
         fun bindRecent(link: RecentLink) {
-            Glide.with(binding.root.context).load(link.url_id).into(binding.image)
+            Glide.with(binding.root.context).load(link.original_image).into(binding.image)
 
             binding.apply {
                 title.text = link.title

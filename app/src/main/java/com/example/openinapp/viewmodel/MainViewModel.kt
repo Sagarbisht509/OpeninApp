@@ -11,7 +11,6 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val apiRepository: ApiRepository) : ViewModel() {
 
     val liveData get() = apiRepository.apiResponseLiveData
-    //val status get() = apiRepository.status
 
     init {
         getData()

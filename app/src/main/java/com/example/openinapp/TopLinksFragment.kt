@@ -21,8 +21,6 @@ class TopLinksFragment : Fragment() {
 
     private lateinit var binding: FragmentTopLinksBinding
 
-    private lateinit var adapter: LinkAdapter
-
     private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreateView(
@@ -30,7 +28,6 @@ class TopLinksFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentTopLinksBinding.inflate(layoutInflater, container, false)
-       // adapter = LinkAdapter()
         return binding.root
     }
 
@@ -45,11 +42,6 @@ class TopLinksFragment : Fragment() {
     private fun observer() {
         mainViewModel.liveData.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is NetworkResult.Loading -> {
-                    // show progress bar
-
-                    Log.d("find-Me", "loading");
-                }
                 is NetworkResult.Success -> {
                     if(it.data != null) {
                         binding.topLinkRecyclerView.adapter = LinkAdapter(it.data.data.top_links, it.data.data.recent_links, "top")
@@ -59,6 +51,8 @@ class TopLinksFragment : Fragment() {
                     Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
                         .show()
                 }
+
+                else -> {}
             }
         })
     }
